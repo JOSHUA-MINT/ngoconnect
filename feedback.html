@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Match | NGO Connect</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo"><span class="logo-icon"></span> <span>NGO Connect</span></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="opportunities.html">Opportunities</a>
+      <a href="match.html" class="active">Smart Match</a>
+      <a href="chat.html">Messages</a>
+      <a href="history.html">History</a>
+      <a href="feedback.html">Feedback</a>
+    </div>
+    <div class="nav-buttons">
+      <a href="login.html" class="btn btn-primary">Login</a>
+      <a href="register.html" class="btn btn-outline">Register</a>
+    </div>
+  </div>
+   <!-- Feedback Section -->
+  <div id="feedback" class="dashboard">
+    <div class="dashboard-header">
+      <div>
+        <h1 class="dashboard-title">Feedback</h1>
+        <p class="dashboard-subtitle">Share your experience after volunteering</p>
+      </div>
+    </div>
+    
+    <div class="dashboard-card">
+      <h2 class="card-title"><i class="fas fa-star"></i> Rate Your Experience</h2>
+      <div class="feedback-form">
+        <div class="form-group">
+          <label>Event</label>
+          <select>
+            <option>Community Cleanup Day</option>
+            <option>Food Bank Assistance</option>
+            <option>Reading Mentorship</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label>Rating</label>
+          <div class="rating">
+            <span class="star active">★</span>
+            <span class="star active">★</span>
+            <span class="star active">★</span>
+            <span class="star active">★</span>
+            <span class="star">★</span>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label>Feedback</label>
+          <textarea placeholder="Share your experience..."></textarea>
+        </div>
+        
+        <button class="btn btn-primary">Submit Feedback</button>
+      </div>
+    </div>
+    
+    <div class="dashboard-card">
+      <h2 class="card-title"><i class="fas fa-comments"></i> Received Feedback</h2>
+      <div class="feedback-item">
+        <div class="history-title">Community Cleanup Day</div>
+        <div class="history-meta">
+          <div><i class="fas fa-calendar"></i> June 5, 2023</div>
+          <div>Rating: ★★★★☆</div>
+        </div>
+        <p>"John was an excellent volunteer - very dedicated and hardworking!"</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

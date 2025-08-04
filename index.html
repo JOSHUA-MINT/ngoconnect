@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NGO Connect</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">
+      <span class="logo-icon"></span>
+      <span>NGO Connect</span>
+    </div>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="opportunities.html">Opportunities</a>
+      <a href="match.html">Smart Match</a>
+      <a href="chat.html">Messages</a>
+      <a href="history.html">History</a>
+      <a href="feedback.html">Feedback</a>
+
+      <!-- NGO-only tab, hidden by default -->
+      <a href="ngo-dashboard.html" id="ngoDashboardTab" style="display:none;">NGO Dashboard</a>
+      <!-- Volunteer-only tab, hidden by default -->
+      <a href="volunteer-dashboard.html" id="volunteerDashboardTab" style="display:none;">Volunteer Dashboard</a>
+    </div>
+    <div class="nav-buttons" id="authButtons">
+      <a href="login.html" class="btn btn-primary" id="loginBtn">Login</a>
+      <a href="register.html" class="btn btn-outline" id="registerBtn">Register</a>
+      <button class="btn btn-outline" id="logoutBtn" style="display:none;">Logout</button>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="hero-content">
+      <h1>NGO Connect</h1>
+      <p>
+        NGO Connect is a platform dedicated to bridging the gap between passionate individuals and impactful organizations.
+        Whether you're an NGO seeking volunteers or someone driven to make a difference, this is your space to collaborate,
+        grow, and drive real change — together.
+      </p>
+      <div
+        style="margin-top: 30px; display: flex; gap: 15px; justify-content: center;"
+      >
+        <a href="register.html" class="btn btn-primary">Join Us Now</a>
+        <a href="opportunities.html" class="btn btn-outline">Browse Opportunities</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Link your existing auth.js for login/register logic -->
+  <script src="./auth.js"></script>
+  <script>
+    // Get userType from sessionStorage
+    const userType = sessionStorage.getItem('userType');
+
+    // Navbar elements
+    const ngoDashboardTab = document.getElementById('ngoDashboardTab');
+    const volunteerDashboardTab = document.getElementById('volunteerDashboardTab');
+    const loginBtn = document.getElementById('loginBtn');
+    const registerBtn = document.getElementById('registerBtn');
+    const logoutBtn = document.getElementById('logoutBtn');
+
+    // Show correct dashboard links based on userType
+    if (userType === 'ngo') {
+      ngoDashboardTab.style.display = 'inline-block';
+      volunteerDashboardTab.style.display = 'none';
+    } else if (userType === 'volunteer') {
+      volunteerDashboardTab.style.display = 'inline-block';
+      ngoDashboardTab.style.display = 'none';
+    } else {
+      ngoDashboardTab.style.display = 'none';
+      volunteerDashboardTab.style.display = 'none';
+    }
+
+    // Toggle login/register/logout buttons
+    if (userType) {
+      loginBtn.style.display = 'none';
+      registerBtn.style.display = 'none';
+      logoutBtn.style.display = 'inline-block';
+    } else {
+      loginBtn.style.display = 'inline-block';
+      registerBtn.style.display = 'inline-block';
+      logoutBtn.style.display = 'none';
+    }
+
+    // Logout button clears sessionStorage and redirects to login page
+    logoutBtn.addEventListener('click', () => {
+      sessionStorage.clear();
+      window.location.href = 'login.html';
+    });
+  </script>
+</body>
+</html>

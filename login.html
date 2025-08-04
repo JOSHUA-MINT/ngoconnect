@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | NGO Connect</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo"><span class="logo-icon"></span> <span>NGO Connect</span></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="opportunities.html">Opportunities</a>
+      <a href="match.html">Smart Match</a>
+      <a href="chat.html">Messages</a>
+      <a href="history.html">History</a>
+      <a href="feedback.html">Feedback</a>
+    </div>
+    <div class="nav-buttons">
+      <a href="login.html" class="btn btn-primary active">Login</a>
+      <a href="register.html" class="btn btn-outline">Register</a>
+    </div>
+  </div>
+  <div id="loginSection" class="form-section">
+    <h2>Login</h2>
+<form id="loginForm">
+  <input type="email" id="loginEmail" name="email" placeholder="Email" required />
+  <input type="password" id="loginPassword" name="password" placeholder="Password" required />
+  <button type="submit">Login</button>
+</form>
+<script src="auth.js"></script>
+
+    <div class="form-footer">
+      <a href="register.html">Don't have an account? Register</a><br>
+      <a href="index.html">← Back to Home</a>
+    </div>
+  </div>
+  <script src="./auth.js"></script>
+</body>
+</html>

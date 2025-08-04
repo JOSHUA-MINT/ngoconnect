@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register | NGO Connect</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo"><span class="logo-icon"></span> <span>NGO Connect</span></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="opportunities.html">Opportunities</a>
+      <a href="match.html">Smart Match</a>
+      <a href="chat.html">Messages</a>
+      <a href="history.html">History</a>
+      <a href="feedback.html">Feedback</a>
+    </div>
+    <div class="nav-buttons">
+      <a href="login.html" class="btn btn-primary">Login</a>
+      <a href="register.html" class="btn btn-outline active">Register</a>
+    </div>
+  </div>
+  <div id="registerSection" class="form-section">
+    <h2>Register</h2>
+<form id="registerForm">
+  <input type="text" id="registerFullName" name="fullName" placeholder="Full Name" required />
+  <input type="email" id="registerEmail" name="email" placeholder="Email" required />
+  <input type="password" id="registerPassword" name="password" placeholder="Password" required />
+  <input type="password" id="registerConfirmPassword" placeholder="Confirm Password" required />
+  <select id="userType" name="userType" required>
+    <option value="">Registering As</option>
+    <option value="ngo">NGO</option>
+    <option value="volunteer">Volunteer</option>
+  </select>
+  <button type="submit">Register</button>
+</form>
+<script src="auth.js"></script>
+
+
+    <div class="form-footer">
+      <a href="login.html">Already have an account? Login</a><br>
+      <a href="index.html">← Back to Home</a>
+    </div>
+  </div>
+  <script src="./auth.js"></script>
+</body>
+</html>

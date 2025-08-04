@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Volunteer Opportunities | NGO Connect</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo"><span class="logo-icon"></span> <span>NGO Connect</span></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="opportunities.html" class="active">Opportunities</a>
+      <a href="match.html">Smart Match</a>
+      <a href="chat.html">Messages</a>
+      <a href="history.html">History</a>
+      <a href="feedback.html">Feedback</a>
+    </div>
+    <div class="nav-buttons">
+      <a href="login.html" class="btn btn-primary">Login</a>
+      <a href="register.html" class="btn btn-outline">Register</a>
+    </div>
+  </div>
+  <div id="opportunities" class="dashboard">
+    <div class="dashboard-header">
+      <div>
+        <h1 class="dashboard-title">Volunteer Opportunities</h1>
+        <p class="dashboard-subtitle">Find meaningful ways to contribute to your community</p>
+      </div>
+    </div>
+    <div class="filter-bar">
+      <div class="filter-group">
+        <label>Location</label>
+        <select class="form-control" style="width:100%">
+          <option>Anywhere</option>
+          <option>Within 5 miles</option>
+          <option>Within 10 miles</option>
+          <option>Within 25 miles</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Category</label>
+        <select class="form-control" style="width:100%">
+          <option>All Categories</option>
+          <option>Environment</option>
+          <option>Education</option>
+          <option>Health</option>
+          <option>Community</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Date</label>
+        <select class="form-control" style="width:100%">
+          <option>Any Time</option>
+          <option>This Weekend</option>
+          <option>Next Week</option>
+          <option>Next Month</option>
+        </select>
+      </div>
+    </div>
+    <div class="opportunity-list">
+      <div class="opportunity-item">
+        <div class="opportunity-info">
+          <div class="opportunity-title">Beach Cleanup Initiative</div>
+          <div class="opportunity-desc">Join us in keeping our beaches clean and safe for wildlife</div>
+          <div class="opportunity-meta">
+            <div class="meta-item"><i class="fas fa-calendar"></i> June 5, 2023</div>
+            <div class="meta-item"><i class="fas fa-map-marker-alt"></i> Sunset Beach</div>
+            <div class="meta-item"><i class="fas fa-clock"></i> 8:00 AM - 12:00 PM</div>
+          </div>
+        </div>
+        <button class="btn btn-primary">Sign Up</button>
+      </div>
+      <div class="opportunity-item">
+        <div class="opportunity-info">
+          <div class="opportunity-title">Reading Mentors Needed</div>
+          <div class="opportunity-desc">Help children improve their reading skills at local schools</div>
+          <div class="opportunity-meta">
+            <div class="meta-item"><i class="fas fa-calendar"></i> Every Wednesday</div>
+            <div class="meta-item"><i class="fas fa-map-marker-alt"></i> City Elementary Schools</div>
+            <div class="meta-item"><i class="fas fa-clock"></i> 3:00 PM - 5:00 PM</div>
+          </div>
+        </div>
+        <button class="btn btn-primary">Sign Up</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

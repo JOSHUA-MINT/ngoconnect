@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NGO Dashboard - NGO Connect</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    body { background: #f7fafc; }
+    .dashboard-container {
+      max-width: 950px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .dashboard-header {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    .profile-circle {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: linear-gradient(135deg,#5b9dd9,#3d7bc2 90%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3em;
+      color: #fff;
+      border: 5px solid #fff;
+      box-shadow: 0 4px 16px 0 #b7d9f7;
+    }
+    .dashboard-greeting h2 {
+      margin-bottom: 7px;
+      font-size: 2em;
+      font-weight: 700;
+      color: #336699;
+    }
+    .dashboard-greeting p {
+      color: #444;
+      font-size: 1.12em;
+    }
+    .dashboard-stats {
+      margin-bottom: 28px;
+      display: flex;
+      gap: 18px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .stat-card {
+      flex: 1 1 260px;
+      background: #fff;
+      padding: 24px 22px 20px 22px;
+      border-radius: 14px;
+      box-shadow: 0px 3px 16px rgba(70,130,180,0.09);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin: 5px 0;
+    }
+    .stat-card i { font-size: 2em; color: #3d7bc2; }
+    .stat-main { font-weight: bold; color: #234061; font-size: 1.5em;}
+    .stat-label { color: #5a6e84; margin-top: 4px; font-size: 1em;}
+    .cards-section {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0px 3px 18px rgba(70,130,180,0.10);
+      padding: 18px 20px;
+      flex: 1 1 370px;
+      min-width: 270px;
+      margin: 8px 0;
+    }
+    .card h3 {
+      color: #336699;
+      margin-bottom: 11px;
+      font-size: 1.27em;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+    .opportunity-list, .recent-volunteers {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .opportunity-list li, .recent-volunteers li {
+      margin-bottom: 13px;
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+    }
+    .opportunity-list .event-icon, .recent-volunteers .vol-icon {
+      color: #487ad3;
+      font-size: 1.08em;
+    }
+    .testimonial {
+      background: #f1f7ff;
+      border-left: 6px solid #5e92e3;
+      padding: 12px 16px;
+      border-radius: 7px;
+      margin-top: 8px;
+      font-style: italic;
+      color: #295887;
+    }
+    @media (max-width:800px){
+      .dashboard-stats, .cards-section { flex-direction: column; }
+      .stat-card, .card { min-width: unset; }
+      .dashboard-header { flex-direction: column; align-items: flex-start;}
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">
+      <span class="logo-icon"></span>
+      <span>NGO Connect</span>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="opportunities.html">Opportunities</a>
+      <a href="match.html">Smart Match</a>
+      <a href="chat.html">Messages</a>
+      <a href="history.html">History</a>
+      <a href="feedback.html">Feedback</a>
+      <a href="ngo-dashboard.html" class="active" id="ngoDashboardTab" style="display:none;">NGO Dashboard</a>
+    </div>
+    <div class="nav-buttons" id="authButtons">
+      <a href="login.html" class="btn btn-primary" id="loginBtn">Login</a>
+      <a href="register.html" class="btn btn-outline" id="registerBtn">Register</a>
+      <button class="btn btn-outline" id="logoutBtn" style="display:none;">Logout</button>
+    </div>
+  </div>
+
+  <div class="dashboard-container">
+    <div class="dashboard-header">
+      <div class="profile-circle">
+        <i class="fas fa-hands-helping"></i>
+      </div>
+      <div class="dashboard-greeting">
+        <h2>Welcome, NGO Team!</h2>
+        <p>
+          Here’s your organization’s overview and recent activity.<br />
+          <span style="color:#487ad3;font-size:1.09em;">Empower change, enable hope! 💙</span>
+        </p>
+      </div>
+    </div>
+    <div class="dashboard-stats">
+      <div class="stat-card">
+        <i class="fas fa-clipboard-list"></i>
+        <div>
+          <div class="stat-main">5</div>
+          <div class="stat-label">Active Opportunities</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <i class="fas fa-users"></i>
+        <div>
+          <div class="stat-main">38</div>
+          <div class="stat-label">Volunteers Engaged</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <i class="fas fa-calendar-check"></i>
+        <div>
+          <div class="stat-main">12</div>
+          <div class="stat-label">Events Hosted</div>
+        </div>
+      </div>
+    </div>
+    <div class="cards-section">
+      <div class="card">
+        <h3><i class="fas fa-bullhorn"></i> Your Current Opportunities</h3>
+        <ul class="opportunity-list">
+          <li><span class="event-icon"><i class="fas fa-leaf"></i></span> <strong>River Cleanup Drive</strong> <br/><small>Ongoing – 14 volunteers signed up</small></li>
+          <li><span class="event-icon"><i class="fas fa-child"></i></span> <strong>Literacy Mentoring</strong> <br/><small>Weekly – 11 volunteers</small></li>
+          <li><span class="event-icon"><i class="fas fa-seedling"></i></span> <strong>Community Gardening</strong> <br/><small>Monthly – Next on Sept 12</small></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-user-friends"></i> Recent Star Volunteers</h3>
+        <ul class="recent-volunteers">
+          <li><span class="vol-icon"><i class="fas fa-medal"></i></span> <strong>Riya Sharma</strong> <br/><small>Logged 22 hours • Event Lead</small></li>
+          <li><span class="vol-icon"><i class="fas fa-medal"></i></span> <strong>Daniel Kim</strong> <br/><small>Helped at 3 events this month</small></li>
+          <li><span class="vol-icon"><i class="fas fa-medal"></i></span> <strong>Fatima Noor</strong> <br/><small>Consistent weekly participation</small></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-comments"></i> Latest Feedback</h3>
+        <div class="testimonial">
+          “Your literacy project made a huge difference in our school. Thank you for giving our children new skills and confidence!”<br/>
+          <span style="font-size:0.95em;opacity:0.8;float:right;">– Principal, City Elementary</span>
+        </div>
+        <div class="testimonial">
+          “Organized, reliable, and always responsive — working with your team is a pleasure!”<br/>
+          <span style="font-size:0.95em;opacity:0.8;float:right;">– Community Partner</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Restrict to NGO-only access
+    const userType = sessionStorage.getItem('userType');
+    if (userType !== 'ngo') {
+      alert('Access denied. You must be logged in as an NGO to view this page.');
+      window.location.href = "index.html";
+    }
+
+    // Navbar visibility logic
+    const ngoDashboardTab = document.getElementById('ngoDashboardTab');
+    const loginBtn = document.getElementById('loginBtn');
+    const registerBtn = document.getElementById('registerBtn');
+    const logoutBtn = document.getElementById('logoutBtn');
+
+    if (userType === 'ngo') {
+      ngoDashboardTab.style.display = 'inline-block';
+      loginBtn.style.display = 'none';
+      registerBtn.style.display = 'none';
+      logoutBtn.style.display = 'inline-block';
+    } else {
+      ngoDashboardTab.style.display = 'none';
+      loginBtn.style.display = 'inline-block';
+      registerBtn.style.display = 'inline-block';
+      logoutBtn.style.display = 'none';
+    }
+
+    // Logout functionality
+    logoutBtn.addEventListener('click', () => {
+      sessionStorage.clear();
+      window.location.href = 'login.html';
+    });
+  </script>
+</body>
+</html>
